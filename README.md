@@ -1,6 +1,46 @@
 # Dockerfile Commands (Instructions)
 
+Every command has 'docker' command as predecessor
 
+### IMAGES
+
+The `IMAGES` shows list of all images
+
+```docker
+# Usage 1: docker images
+```
+
+
+### PS
+
+The `PS` command lists all working containers
+```docker
+# Usage 1:docker ps
+```
+
+### RUN
+
+The `RUN` creates container from the images
+```Docker
+  docker run -i -t ubuntu-svdevops
+ -i interactive
+ -t tty terminal
+```
+### container ls
+
+The `container ls` lists all running container
+```Docker
+docker container ls
+```
+### EXEC
+
+Run a command in a running container / Attach to an existing container
+```Docker
+docker exec -it {container id} /bin/bash
+
+
+
+```
 ### ADD
 The `ADD` command copies the files from the source on the host into the container's own filesystem at the set destination. Source can also be an URL.
 
@@ -64,15 +104,6 @@ A non-executing command declaring the author. It should come after `FROM`.
 MAINTAINER author_name
 ```
 
-### RUN
-
-The `RUN` command takes a command as its argument and runs it to form the image. Unline `CMD`, it is actually used to build the image.
-
-```Docker
-RUN apt update && \
-    apt upgrade && \
-    apt install build-essential
-```
 
 ### USER
 
